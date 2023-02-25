@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: darkslateblue;
+  display: grid;
+  place-items: center;
+}
+
+.main {
+  min-width: 360px;
+  width: 50%;
+  min-height: 40%;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.items {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+.input-field {
+  width: 50%;
+  display: flex;
+  position: relative;
+}
+
+#input {
+  width: 100%;
+  font-size: 1rem;
+  padding: 20px;
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  border-radius: 10px;
+}
+
+#input::placeholder {
+  color: transparent;
+}
+
+#label {
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 50%;
+  left: 3%;
+  transform: translate(0, -35%);
+  padding-left: 5px;
+  cursor: pointer;
+}
+
+#btn {
+  width: 50%;
+  background-color: orange;
+  padding: 10px;
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+  font-weight: 600;
+  outline: 0;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+#btn:active {
+  background-color: rgb(230, 150, 0);
+}
+
+#input:focus + #label,
+#input:not(:placeholder-shown) + #label {
+  font-size: 0.8rem;
+  transform: translate(-8%, -160%);
+  color: black;
+}
+
+.qr-code {
+  display: none;
+  padding: 15px;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  margin: 15px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-radius: 100%;
+  border-top-color: blue;
+
+  animation: spin 3s ease-in-out infinite;
+
+  display: none;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(3turn);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .input-field {
+    width: 80%;
+  }
+  #btn {
+    width: 80%;
+  }
+}
